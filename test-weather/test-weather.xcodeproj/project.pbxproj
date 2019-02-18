@@ -13,6 +13,13 @@
 		221D8E48221B281E00D2BDEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 221D8E47221B281E00D2BDEE /* Assets.xcassets */; };
 		221D8E4B221B281E00D2BDEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221D8E49221B281E00D2BDEE /* LaunchScreen.storyboard */; };
 		221D8E56221B281E00D2BDEE /* test_weatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221D8E55221B281E00D2BDEE /* test_weatherTests.swift */; };
+		22A201D8221B2C760089FDEF /* CoordinatorFactoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A201D7221B2C760089FDEF /* CoordinatorFactoryType.swift */; };
+		22A201DA221B2C8D0089FDEF /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A201D9221B2C8D0089FDEF /* CoordinatorFactory.swift */; };
+		22A201DC221B2D330089FDEF /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A201DB221B2D330089FDEF /* AppContext.swift */; };
+		22A201DE221B2DA50089FDEF /* ViewControllerFactoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A201DD221B2DA50089FDEF /* ViewControllerFactoryType.swift */; };
+		22A201E0221B2DB00089FDEF /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A201DF221B2DB00089FDEF /* ViewControllerFactory.swift */; };
+		22A201E2221B2F5E0089FDEF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A201E1221B2F5E0089FDEF /* AppCoordinator.swift */; };
+		22A201E5221B2F9E0089FDEF /* Coordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A201E4221B2F9E0089FDEF /* Coordinating.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +43,13 @@
 		221D8E51221B281E00D2BDEE /* test-weatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "test-weatherTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		221D8E55221B281E00D2BDEE /* test_weatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test_weatherTests.swift; sourceTree = "<group>"; };
 		221D8E57221B281E00D2BDEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22A201D7221B2C760089FDEF /* CoordinatorFactoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactoryType.swift; sourceTree = "<group>"; };
+		22A201D9221B2C8D0089FDEF /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
+		22A201DB221B2D330089FDEF /* AppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
+		22A201DD221B2DA50089FDEF /* ViewControllerFactoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactoryType.swift; sourceTree = "<group>"; };
+		22A201DF221B2DB00089FDEF /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		22A201E1221B2F5E0089FDEF /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		22A201E4221B2F9E0089FDEF /* Coordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinating.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +96,7 @@
 				221D8E42221B281C00D2BDEE /* ViewController.swift */,
 				221D8E44221B281C00D2BDEE /* Main.storyboard */,
 				221D8E49221B281E00D2BDEE /* LaunchScreen.storyboard */,
+				221D8E4C221B281E00D2BDEE /* Info.plist */,
 			);
 			path = "test-weather";
 			sourceTree = "<group>";
@@ -106,8 +121,11 @@
 		22A201D4221B2B370089FDEF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				22A201DB221B2D330089FDEF /* AppContext.swift */,
+				22A201E1221B2F5E0089FDEF /* AppCoordinator.swift */,
 				221D8E40221B281C00D2BDEE /* AppDelegate.swift */,
 				22A201D5221B2B490089FDEF /* Factories */,
+				22A201E3221B2F750089FDEF /* Protocols */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -115,6 +133,10 @@
 		22A201D5221B2B490089FDEF /* Factories */ = {
 			isa = PBXGroup;
 			children = (
+				22A201D9221B2C8D0089FDEF /* CoordinatorFactory.swift */,
+				22A201D7221B2C760089FDEF /* CoordinatorFactoryType.swift */,
+				22A201DF221B2DB00089FDEF /* ViewControllerFactory.swift */,
+				22A201DD221B2DA50089FDEF /* ViewControllerFactoryType.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -122,10 +144,17 @@
 		22A201D6221B2B6A0089FDEF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				221D8E4C221B281E00D2BDEE /* Info.plist */,
 				221D8E47221B281E00D2BDEE /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		22A201E3221B2F750089FDEF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				22A201E4221B2F9E0089FDEF /* Coordinating.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,7 +259,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				221D8E43221B281C00D2BDEE /* ViewController.swift in Sources */,
+				22A201E0221B2DB00089FDEF /* ViewControllerFactory.swift in Sources */,
+				22A201DE221B2DA50089FDEF /* ViewControllerFactoryType.swift in Sources */,
+				22A201DC221B2D330089FDEF /* AppContext.swift in Sources */,
+				22A201E5221B2F9E0089FDEF /* Coordinating.swift in Sources */,
+				22A201E2221B2F5E0089FDEF /* AppCoordinator.swift in Sources */,
 				221D8E41221B281C00D2BDEE /* AppDelegate.swift in Sources */,
+				22A201D8221B2C760089FDEF /* CoordinatorFactoryType.swift in Sources */,
+				22A201DA221B2C8D0089FDEF /* CoordinatorFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
