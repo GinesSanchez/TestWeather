@@ -77,12 +77,11 @@
 		221D8E3F221B281C00D2BDEE /* test-weather */ = {
 			isa = PBXGroup;
 			children = (
-				221D8E40221B281C00D2BDEE /* AppDelegate.swift */,
+				22A201D6221B2B6A0089FDEF /* Resources */,
+				22A201D3221B2B0D0089FDEF /* Source */,
 				221D8E42221B281C00D2BDEE /* ViewController.swift */,
 				221D8E44221B281C00D2BDEE /* Main.storyboard */,
-				221D8E47221B281E00D2BDEE /* Assets.xcassets */,
 				221D8E49221B281E00D2BDEE /* LaunchScreen.storyboard */,
-				221D8E4C221B281E00D2BDEE /* Info.plist */,
 			);
 			path = "test-weather";
 			sourceTree = "<group>";
@@ -94,6 +93,39 @@
 				221D8E57221B281E00D2BDEE /* Info.plist */,
 			);
 			path = "test-weatherTests";
+			sourceTree = "<group>";
+		};
+		22A201D3221B2B0D0089FDEF /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				22A201D4221B2B370089FDEF /* Common */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		22A201D4221B2B370089FDEF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				221D8E40221B281C00D2BDEE /* AppDelegate.swift */,
+				22A201D5221B2B490089FDEF /* Factories */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		22A201D5221B2B490089FDEF /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		22A201D6221B2B6A0089FDEF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				221D8E4C221B281E00D2BDEE /* Info.plist */,
+				221D8E47221B281E00D2BDEE /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
