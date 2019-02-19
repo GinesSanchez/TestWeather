@@ -29,7 +29,7 @@ final class WeatherViewCoordinator: WeatherViewCoordinatorType {
     }
 
     func start() {
-        weatherViewController = viewControllerFactory.makeWeatherView(delegate: self)
+        weatherViewController = viewControllerFactory.makeWeatherView(delegate: self, appContext: appContext)
         navigationController?.pushViewController(weatherViewController!, animated: true)
     }
 

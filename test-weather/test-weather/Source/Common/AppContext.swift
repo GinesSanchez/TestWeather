@@ -13,6 +13,7 @@ protocol AppContextType {
     var appCoordinator: AppCoordinatorType? { get set }
     var coordinatorFactory: CoordinatorFactoryType { get }
     var viewControllerFactory: ViewControllerFactoryType { get }
+    var weatherAppManager: WeatherAppManagerType { get }
 }
 
 final class AppContext: AppContextType {
@@ -20,10 +21,12 @@ final class AppContext: AppContextType {
     var appCoordinator: AppCoordinatorType?
     var viewControllerFactory: ViewControllerFactoryType
     var coordinatorFactory: CoordinatorFactoryType
+    var weatherAppManager: WeatherAppManagerType
 
     init() {
         self.coordinatorFactory = CoordinatorFactory()
         self.viewControllerFactory = ViewControllerFactory()
+        self.weatherAppManager = WeatherAppManager()
         self.appCoordinator = coordinatorFactory.makeAppCoordinator(appContext: self,
                                                                     navigationController: UINavigationController())
     }

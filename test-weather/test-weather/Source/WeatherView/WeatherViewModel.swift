@@ -23,6 +23,7 @@ protocol WeatherViewModelDelegate: class {
 final class WeatherViewModel {
 
     private weak var delegate: WeatherViewModelDelegate?
+    private var appContext: AppContextType
 
     var viewModelState: ViewModelState<WeatherViewReadyState> = .ready(.temperatureReady) {
         didSet {
@@ -37,8 +38,11 @@ final class WeatherViewModel {
         }
     }
 
-    init(delegate: WeatherViewModelDelegate) {
+    init(delegate: WeatherViewModelDelegate, appContext: AppContextType) {
         self.delegate = delegate
+        self.appContext = appContext
+
+        appContext.weatherAppManager.getCelsiusTemperature(city: Constants.WeatherAPIDetails.defaultCityValue, key: Constants.WeatherAPIDetails.apiKeyValue)
     }
 }
 

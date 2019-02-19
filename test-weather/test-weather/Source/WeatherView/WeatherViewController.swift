@@ -14,9 +14,10 @@ final class WeatherViewController: UIViewController {
 
     //Public Properties
     weak var delegate: WeatherViewControllerDelegate?
+    var appContext: AppContextType!
 
     //Private Properties
-    private var loginViewModel: WeatherViewModel!    
+    private var weatherViewModel: WeatherViewModel!
 
     //IBOutlets
     @IBOutlet weak var redCircleImageView: UIImageView!
@@ -33,8 +34,13 @@ final class WeatherViewController: UIViewController {
 private extension WeatherViewController {
 
     func setUp() {
+        setUpViewModel()
         setUpNavigationBar()
         setUpImageViews()
+    }
+
+    func setUpViewModel() {
+        weatherViewModel = WeatherViewModel(delegate: self, appContext: appContext)
     }
 
     func setUpNavigationBar() {
@@ -45,5 +51,12 @@ private extension WeatherViewController {
         redCircleImageView.image = UIImage(named: "RedCircleImage")!
         greenCircleImageView.image = UIImage(named: "GreenCircleImage")!
         blueCircleImageView.image = UIImage(named: "BlueCircleImage")!
+    }
+}
+
+extension WeatherViewController: WeatherViewModelDelegate {
+
+    func viewModel(_ viewModel: WeatherViewModel, stateDidChange state: ViewModelState<WeatherViewReadyState>) {
+        //TODO:
     }
 }
