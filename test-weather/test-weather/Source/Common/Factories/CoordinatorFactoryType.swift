@@ -12,4 +12,5 @@ import UIKit
 protocol CoordinatorFactoryType {
 
     func makeAppCoordinator(appContext: AppContextType, navigationController: UINavigationController) -> AppCoordinatorType
+    func makeWeatherViewCoordinator(appContext: AppContextType, navigationController: UINavigationController) -> WeatherViewCoordinatorType
 }

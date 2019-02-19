@@ -1,25 +1,23 @@
 //
-//  AppCoordinator.swift
+//  WeatherViewCoordinator.swift
 //  test-weather
 //
-//  Created by Ginés Sánchez on 2019-02-18.
+//  Created by Ginés Sánchez on 2019-02-19.
 //  Copyright © 2019 Ginés Sánchez. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-protocol AppCoordinatorType: Coordinating {
+protocol WeatherViewCoordinatorType: Coordinating {
     var navigationController: UINavigationController? { get set }
 }
 
-final class AppCoordinator: AppCoordinatorType {
+final class WeatherViewCoordinator: WeatherViewCoordinatorType {
     let appContext: AppContextType
     let coordinatorFactory: CoordinatorFactoryType
     let viewControllerFactory: ViewControllerFactoryType
     var navigationController: UINavigationController?
-
-    private var weatherViewCoordinator: WeatherViewCoordinatorType?
 
     init(appContext: AppContextType, navigationController: UINavigationController) {
         self.appContext = appContext
@@ -29,13 +27,13 @@ final class AppCoordinator: AppCoordinatorType {
     }
 
     func start() {
-        weatherViewCoordinator = coordinatorFactory.makeWeatherViewCoordinator(appContext: appContext, navigationController: navigationController!)
-        weatherViewCoordinator?.start()
+        //TODO: Create View Controller coordinator.
+        //TODO: start view controller coordinator.        
     }
 
     func stop() {
-        weatherViewCoordinator?.stop()
-        weatherViewCoordinator = nil
+        //TODO: stop view controller coordinator.
+        //TODO: set to nil view controller coordinator.
     }
 }
 

@@ -14,4 +14,8 @@ final class CoordinatorFactory: CoordinatorFactoryType {
     func makeAppCoordinator(appContext: AppContextType, navigationController: UINavigationController) -> AppCoordinatorType {
         return AppCoordinator(appContext: appContext, navigationController: navigationController)
     }
+
+    func makeWeatherViewCoordinator(appContext: AppContextType, navigationController: UINavigationController) -> WeatherViewCoordinatorType {
+        return WeatherViewCoordinator(appContext: appContext, navigationController: navigationController)
+    }
 }
