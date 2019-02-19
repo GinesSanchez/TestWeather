@@ -9,6 +9,10 @@
 import Foundation
 
 final class ViewControllerFactory: ViewControllerFactoryType {
-
-    //TODO:
+    
+    func makeWeatherView(delegate: WeatherViewControllerDelegate) -> WeatherViewController {
+        let weatherVC = WeatherViewController()
+        weatherVC.delegate = delegate
+        return weatherVC
+    }
 }

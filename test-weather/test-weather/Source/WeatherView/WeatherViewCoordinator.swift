@@ -19,6 +19,8 @@ final class WeatherViewCoordinator: WeatherViewCoordinatorType {
     let viewControllerFactory: ViewControllerFactoryType
     var navigationController: UINavigationController?
 
+    private var weatherViewController: WeatherViewController?
+
     init(appContext: AppContextType, navigationController: UINavigationController) {
         self.appContext = appContext
         self.coordinatorFactory = appContext.coordinatorFactory
@@ -27,13 +29,17 @@ final class WeatherViewCoordinator: WeatherViewCoordinatorType {
     }
 
     func start() {
-        //TODO: Create View Controller coordinator.
-        //TODO: start view controller coordinator.        
+        weatherViewController = viewControllerFactory.makeWeatherView(delegate: self)
+        navigationController?.pushViewController(weatherViewController!, animated: true)
     }
 
     func stop() {
-        //TODO: stop view controller coordinator.
-        //TODO: set to nil view controller coordinator.
+        navigationController?.popViewController(animated: false)
+        weatherViewController = nil        
     }
+}
+
+extension WeatherViewCoordinator: WeatherViewControllerDelegate {
+
 }
 

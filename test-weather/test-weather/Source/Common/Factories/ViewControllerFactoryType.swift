@@ -10,5 +10,5 @@ import Foundation
 
 protocol ViewControllerFactoryType {
 
-    //TODO:
+    func makeWeatherView(delegate: WeatherViewControllerDelegate) -> WeatherViewController
 }

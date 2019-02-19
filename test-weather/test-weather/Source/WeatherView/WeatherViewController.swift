@@ -8,23 +8,19 @@
 
 import UIKit
 
+protocol WeatherViewControllerDelegate: class { }
+
 final class WeatherViewController: UIViewController {
+
+    //Public Properties
+    weak var delegate: WeatherViewControllerDelegate?
+
+    //Private Properties
+    private var loginViewModel: WeatherViewModel!    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view.        
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
