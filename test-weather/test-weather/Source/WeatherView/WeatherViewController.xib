@@ -12,6 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeatherViewController" customModule="test_weather" customModuleProvider="target">
             <connections>
+                <outlet property="blueCircleImageView" destination="q3L-fj-MBN" id="maa-XJ-hyc"/>
+                <outlet property="greenCircleImageView" destination="OFQ-iP-Pvp" id="tL7-dk-huV"/>
+                <outlet property="redCircleImageView" destination="lWl-QC-ov6" id="TmZ-D6-r4x"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,7 +22,69 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="0.82704508600000004" green="1" blue="0.83467512369999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lWl-QC-ov6">
+                    <rect key="frame" x="94" y="241" width="187.5" height="187.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="lWl-QC-ov6" secondAttribute="height" multiplier="1:1" id="YL4-QD-Kzj"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKd-tz-uqT">
+                    <rect key="frame" x="34" y="464" width="307.5" height="120"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OFQ-iP-Pvp">
+                            <rect key="frame" x="187.5" y="0.0" width="120" height="120"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="OFQ-iP-Pvp" secondAttribute="height" multiplier="1:1" id="V8U-FP-kdj"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q3L-fj-MBN">
+                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="q3L-fj-MBN" secondAttribute="height" multiplier="1:1" id="i2u-A5-DQb"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="OFQ-iP-Pvp" firstAttribute="top" secondItem="GKd-tz-uqT" secondAttribute="top" id="9TP-0a-LbE"/>
+                        <constraint firstAttribute="bottom" secondItem="OFQ-iP-Pvp" secondAttribute="bottom" id="De9-c9-wpR"/>
+                        <constraint firstItem="q3L-fj-MBN" firstAttribute="top" secondItem="GKd-tz-uqT" secondAttribute="top" id="Ebj-wK-ZhG"/>
+                        <constraint firstItem="q3L-fj-MBN" firstAttribute="leading" secondItem="GKd-tz-uqT" secondAttribute="leading" id="KEb-CR-JLx"/>
+                        <constraint firstAttribute="trailing" secondItem="OFQ-iP-Pvp" secondAttribute="trailing" id="YVq-Uz-pxc"/>
+                        <constraint firstAttribute="bottom" secondItem="q3L-fj-MBN" secondAttribute="bottom" id="dQC-GG-6s9"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Weather App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzh-4D-Gbi">
+                    <rect key="frame" x="109.5" y="61" width="156.5" height="29"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Karachi tempenture: 31 ºC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ej-e7-P88">
+                    <rect key="frame" x="110.5" y="126.5" width="154" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="5ej-e7-P88" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.39" id="4dy-hs-ydK"/>
+                <constraint firstItem="mzh-4D-Gbi" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.22" id="5dY-zS-HMq"/>
+                <constraint firstItem="GKd-tz-uqT" firstAttribute="height" secondItem="lWl-QC-ov6" secondAttribute="height" multiplier="0.64" id="63x-TX-yh4"/>
+                <constraint firstItem="5ej-e7-P88" firstAttribute="centerX" secondItem="mzh-4D-Gbi" secondAttribute="centerX" id="6cP-mj-oVK"/>
+                <constraint firstItem="lWl-QC-ov6" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="7IP-uI-iha"/>
+                <constraint firstItem="lWl-QC-ov6" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="P08-Af-Hvq"/>
+                <constraint firstItem="GKd-tz-uqT" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Yze-Eh-6dx"/>
+                <constraint firstItem="GKd-tz-uqT" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.82" id="gUH-XJ-EhX"/>
+                <constraint firstItem="mzh-4D-Gbi" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="iW8-oW-Q3i"/>
+                <constraint firstItem="lWl-QC-ov6" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.975" id="oJs-LP-yuw"/>
+                <constraint firstItem="GKd-tz-uqT" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="1.525" id="pc1-E2-oly"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>

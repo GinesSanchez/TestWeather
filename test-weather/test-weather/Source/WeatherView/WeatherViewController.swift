@@ -18,9 +18,32 @@ final class WeatherViewController: UIViewController {
     //Private Properties
     private var loginViewModel: WeatherViewModel!    
 
+    //IBOutlets
+    @IBOutlet weak var redCircleImageView: UIImageView!
+    @IBOutlet weak var greenCircleImageView: UIImageView!
+    @IBOutlet weak var blueCircleImageView: UIImageView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.        
+        setUp()
+    }
+}
+
+private extension WeatherViewController {
+
+    func setUp() {
+        setUpNavigationBar()
+        setUpImageViews()
+    }
+
+    func setUpNavigationBar() {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+
+    func setUpImageViews() {        
+        redCircleImageView.image = UIImage(named: "RedCircleImage")!
+        greenCircleImageView.image = UIImage(named: "GreenCircleImage")!
+        blueCircleImageView.image = UIImage(named: "BlueCircleImage")!
     }
 }
