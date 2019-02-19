@@ -12,6 +12,9 @@
 		221CC776221BFB66008B5986 /* WeatherViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CC775221BFB66008B5986 /* WeatherViewCoordinator.swift */; };
 		221CC778221BFB83008B5986 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CC777221BFB83008B5986 /* WeatherViewModel.swift */; };
 		221CC77B221BFFCB008B5986 /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CC77A221BFFCB008B5986 /* ViewModelState.swift */; };
+		221CC77F221C0E5A008B5986 /* GreenCircle.svg in Resources */ = {isa = PBXBuildFile; fileRef = 221CC77D221C0E5A008B5986 /* GreenCircle.svg */; };
+		221CC780221C0E5A008B5986 /* BlueCircle.svg in Resources */ = {isa = PBXBuildFile; fileRef = 221CC77E221C0E5A008B5986 /* BlueCircle.svg */; };
+		221CC782221C0E61008B5986 /* RedCircle.svg in Resources */ = {isa = PBXBuildFile; fileRef = 221CC781221C0E61008B5986 /* RedCircle.svg */; };
 		221D8E41221B281C00D2BDEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221D8E40221B281C00D2BDEE /* AppDelegate.swift */; };
 		221D8E48221B281E00D2BDEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 221D8E47221B281E00D2BDEE /* Assets.xcassets */; };
 		221D8E4B221B281E00D2BDEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221D8E49221B281E00D2BDEE /* LaunchScreen.storyboard */; };
@@ -41,6 +44,9 @@
 		221CC775221BFB66008B5986 /* WeatherViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewCoordinator.swift; sourceTree = "<group>"; };
 		221CC777221BFB83008B5986 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		221CC77A221BFFCB008B5986 /* ViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelState.swift; sourceTree = "<group>"; };
+		221CC77D221C0E5A008B5986 /* GreenCircle.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GreenCircle.svg; sourceTree = "<group>"; };
+		221CC77E221C0E5A008B5986 /* BlueCircle.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BlueCircle.svg; sourceTree = "<group>"; };
+		221CC781221C0E61008B5986 /* RedCircle.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = RedCircle.svg; sourceTree = "<group>"; };
 		221D8E3D221B281C00D2BDEE /* test-weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "test-weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		221D8E40221B281C00D2BDEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		221D8E47221B281E00D2BDEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,6 +99,16 @@
 				221CC77A221BFFCB008B5986 /* ViewModelState.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		221CC77C221C0E3D008B5986 /* svgs */ = {
+			isa = PBXGroup;
+			children = (
+				221CC781221C0E61008B5986 /* RedCircle.svg */,
+				221CC77E221C0E5A008B5986 /* BlueCircle.svg */,
+				221CC77D221C0E5A008B5986 /* GreenCircle.svg */,
+			);
+			path = svgs;
 			sourceTree = "<group>";
 		};
 		221D8E34221B281C00D2BDEE = {
@@ -169,6 +185,7 @@
 		22A201D6221B2B6A0089FDEF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				221CC77C221C0E3D008B5986 /* svgs */,
 				221D8E47221B281E00D2BDEE /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -263,8 +280,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				221CC77F221C0E5A008B5986 /* GreenCircle.svg in Resources */,
 				221D8E4B221B281E00D2BDEE /* LaunchScreen.storyboard in Resources */,
 				221CC774221BFB51008B5986 /* WeatherViewController.xib in Resources */,
+				221CC780221C0E5A008B5986 /* BlueCircle.svg in Resources */,
+				221CC782221C0E61008B5986 /* RedCircle.svg in Resources */,
 				221D8E48221B281E00D2BDEE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
