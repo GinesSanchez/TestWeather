@@ -9,7 +9,7 @@
 import Foundation
 
 enum WeatherViewReadyState {
-    case temperatureReady
+    case currentTemperatureReady
 }
 
 enum WeatherViewModelError: Error {
@@ -24,45 +24,68 @@ final class WeatherViewModel {
 
     private weak var delegate: WeatherViewModelDelegate?
     private var appContext: AppContextType
+    private var currentTemperature: Int?
 
-    var viewModelState: ViewModelState<WeatherViewReadyState> = .ready(.temperatureReady) {
+    var viewModelState: ViewModelState<WeatherViewReadyState> = .ready(.currentTemperatureReady) {
         didSet {
             updateViewState(viewModelState)
-        }
-    }
-
-    private func updateViewState(_ state: ViewModelState<WeatherViewReadyState>) {
-        DispatchQueue.main.async { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.delegate?.viewModel(strongSelf, stateDidChange: state)
         }
     }
 
     init(delegate: WeatherViewModelDelegate, appContext: AppContextType) {
         self.delegate = delegate
         self.appContext = appContext
+    }
+}
 
-        appContext.weatherAppManager.getCelsiusTemperature(city: Constants.WeatherAPIDetails.defaultCityValue, key: Constants.WeatherAPIDetails.apiKeyValue) { (temperature, error) in
-            guard let temperature = temperature else {
-                print(error!)
+extension WeatherViewModel {
+
+    func getCurrentTemperature() {
+
+        viewModelState = .loading
+
+        appContext.weatherAppManager.getCelsiusTemperature(city: Constants.WeatherAPIDetails.defaultCityValue, key: Constants.WeatherAPIDetails.apiKeyValue) { [weak self] (temperature, error) in
+            guard let error = error else {
+                guard let temperature = temperature else {
+                    self?.viewModelState = .failure(WeatherAppError.unknownApiError)
+                    return
+                }
+
+                self?.currentTemperature = temperature
+                self?.viewModelState = .ready(.currentTemperatureReady)
                 return
             }
-            print(temperature)
+
+            self?.viewModelState = .failure(error)
         }
     }
 }
 
-// MARK: - Actions
+private extension WeatherViewModel {
+
+    func updateViewState(_ state: ViewModelState<WeatherViewReadyState>) {
+        DispatchQueue.main.async { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.delegate?.viewModel(strongSelf, stateDidChange: state)
+        }
+    }
+}
+
+// MARK: - Computed properties
 extension WeatherViewModel {
 
-    func checkReachability(completion: ((Bool) -> Void)?) {
-        //TODO:
+    var title: String {
+        return "Weather App"        //TODO: Localize
     }
 
-    func getTemperature() {
+    var loadingMessage: String {
+        return "Getting Temperature..."     //TODO: Localize
+    }
 
-        viewModelState = .loading
-
-        //TODO:
+    var currentTemperatureMessage: String {
+        guard let temperature = currentTemperature else {
+            return "Karachi tempenture: Not Available"     //TODO: Localize
+        }
+        return "Karachi tempenture: \(temperature) ºC"     //TODO: Localize
     }
 }

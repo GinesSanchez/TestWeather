@@ -14,7 +14,9 @@
             <connections>
                 <outlet property="blueCircleImageView" destination="q3L-fj-MBN" id="maa-XJ-hyc"/>
                 <outlet property="greenCircleImageView" destination="OFQ-iP-Pvp" id="tL7-dk-huV"/>
+                <outlet property="messageLabel" destination="5ej-e7-P88" id="Zao-Jf-2VC"/>
                 <outlet property="redCircleImageView" destination="lWl-QC-ov6" id="TmZ-D6-r4x"/>
+                <outlet property="titleLabel" destination="mzh-4D-Gbi" id="i6e-Pv-Rdd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
