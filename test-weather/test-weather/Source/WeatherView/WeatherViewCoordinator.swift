@@ -19,7 +19,7 @@ final class WeatherViewCoordinator: WeatherViewCoordinatorType {
     let viewControllerFactory: ViewControllerFactoryType
     var navigationController: UINavigationController?
 
-    private var weatherViewController: WeatherViewController?
+    var weatherViewController: WeatherViewController?
 
     init(appContext: AppContextType, navigationController: UINavigationController) {
         self.appContext = appContext
