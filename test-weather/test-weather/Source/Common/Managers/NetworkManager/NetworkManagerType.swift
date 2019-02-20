@@ -10,7 +10,7 @@ import Foundation
 
 protocol NetworkManagerType {
 
-    /// Retrives Weather app URL
+    /// Retrives a URL
     ///
     /// - Parameter parameters: dictionary with parameters [key: value]
     /// - Returns: URL for weather app
