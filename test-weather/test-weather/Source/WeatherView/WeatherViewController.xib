@@ -15,7 +15,7 @@
                 <outlet property="blueCircleImageView" destination="q3L-fj-MBN" id="maa-XJ-hyc"/>
                 <outlet property="greenCircleImageView" destination="OFQ-iP-Pvp" id="tL7-dk-huV"/>
                 <outlet property="messageLabel" destination="5ej-e7-P88" id="Zao-Jf-2VC"/>
-                <outlet property="redCircleImageView" destination="lWl-QC-ov6" id="TmZ-D6-r4x"/>
+                <outlet property="redCircleButton" destination="pGJ-mC-M4I" id="Ptn-rQ-iL6"/>
                 <outlet property="titleLabel" destination="mzh-4D-Gbi" id="i6e-Pv-Rdd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,13 +25,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lWl-QC-ov6">
-                    <rect key="frame" x="94" y="241" width="187.5" height="187.5"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="lWl-QC-ov6" secondAttribute="height" multiplier="1:1" id="YL4-QD-Kzj"/>
-                    </constraints>
-                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKd-tz-uqT">
                     <rect key="frame" x="34" y="464" width="307.5" height="120"/>
                     <subviews>
@@ -72,22 +65,37 @@
                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGJ-mC-M4I">
+                    <rect key="frame" x="94" y="241.5" width="187.5" height="187.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="pGJ-mC-M4I" secondAttribute="height" multiplier="1:1" id="RYN-yi-NVt"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                    <state key="normal" title="_Tap Me!">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="redCircleButtonTapped:" destination="-1" eventType="touchUpInside" id="EL1-LK-NGE"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="5ej-e7-P88" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.39" id="4dy-hs-ydK"/>
                 <constraint firstItem="mzh-4D-Gbi" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.22" id="5dY-zS-HMq"/>
-                <constraint firstItem="GKd-tz-uqT" firstAttribute="height" secondItem="lWl-QC-ov6" secondAttribute="height" multiplier="0.64" id="63x-TX-yh4"/>
                 <constraint firstItem="5ej-e7-P88" firstAttribute="centerX" secondItem="mzh-4D-Gbi" secondAttribute="centerX" id="6cP-mj-oVK"/>
-                <constraint firstItem="lWl-QC-ov6" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="7IP-uI-iha"/>
-                <constraint firstItem="lWl-QC-ov6" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="P08-Af-Hvq"/>
+                <constraint firstItem="pGJ-mC-M4I" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="DcA-XU-2am"/>
+                <constraint firstItem="pGJ-mC-M4I" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="SYA-rE-wEN"/>
                 <constraint firstItem="GKd-tz-uqT" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Yze-Eh-6dx"/>
+                <constraint firstItem="GKd-tz-uqT" firstAttribute="height" secondItem="pGJ-mC-M4I" secondAttribute="height" multiplier="0.64" id="gK9-Ja-EnS"/>
                 <constraint firstItem="GKd-tz-uqT" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.82" id="gUH-XJ-EhX"/>
+                <constraint firstItem="pGJ-mC-M4I" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-8.5" id="h5g-CN-edC"/>
                 <constraint firstItem="mzh-4D-Gbi" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="iW8-oW-Q3i"/>
-                <constraint firstItem="lWl-QC-ov6" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.975" id="oJs-LP-yuw"/>
                 <constraint firstItem="GKd-tz-uqT" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="1.525" id="pc1-E2-oly"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
         </view>
     </objects>
 </document>

@@ -88,4 +88,8 @@ extension WeatherViewModel {
         }
         return "Karachi tempenture: \(temperature) ºC"     //TODO: Localize
     }
+
+    var redCircleButtonTitle: String {
+        return "Tap Me!"        //TODO: Localize
+    }
 }

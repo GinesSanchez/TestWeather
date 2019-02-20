@@ -20,6 +20,7 @@ final class WeatherViewCoordinator: WeatherViewCoordinatorType {
     var navigationController: UINavigationController?
 
     var weatherViewController: WeatherViewController?
+    var secondaryViewController: SecondaryViewController?
 
     init(appContext: AppContextType, navigationController: UINavigationController) {
         self.appContext = appContext
@@ -41,5 +42,17 @@ final class WeatherViewCoordinator: WeatherViewCoordinatorType {
 
 extension WeatherViewCoordinator: WeatherViewControllerDelegate {
 
+    func navigateToSecondaryView(viewController: UIViewController) {
+        secondaryViewController = viewControllerFactory.makeSecondaryView(delegate: self)
+        navigationController?.pushViewController(secondaryViewController!, animated: true)
+    }
+}
+
+extension WeatherViewCoordinator: SecondaryViewControllerDelegate {
+
+    func navigateBack(viewController: SecondaryViewController) {
+        navigationController?.popViewController(animated: true)
+        secondaryViewController = nil
+    }
 }
 

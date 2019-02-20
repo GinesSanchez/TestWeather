@@ -8,7 +8,9 @@
 
 import UIKit
 
-protocol WeatherViewControllerDelegate: class { }
+protocol WeatherViewControllerDelegate: class {
+    func navigateToSecondaryView(viewController: UIViewController)
+}
 
 final class WeatherViewController: UIViewController {
 
@@ -20,7 +22,8 @@ final class WeatherViewController: UIViewController {
     private var weatherViewModel: WeatherViewModel!
 
     //IBOutlets
-    @IBOutlet weak var redCircleImageView: UIImageView!
+    @IBOutlet weak var redCircleButton: UIButton!
+
     @IBOutlet weak var greenCircleImageView: UIImageView!
     @IBOutlet weak var blueCircleImageView: UIImageView!
 
@@ -35,6 +38,7 @@ final class WeatherViewController: UIViewController {
     }
 }
 
+// MARK: - Set Up Methods
 private extension WeatherViewController {
 
     func setUp() {
@@ -42,6 +46,7 @@ private extension WeatherViewController {
         setUpNavigationBar()
         setUpImageViews()
         setUpLabels()
+        setUpButtons()
     }
 
     func setUpViewModel() {
@@ -53,8 +58,7 @@ private extension WeatherViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
 
-    func setUpImageViews() {        
-        redCircleImageView.image = UIImage(named: "RedCircleImage")!
+    func setUpImageViews() {
         greenCircleImageView.image = UIImage(named: "GreenCircleImage")!
         blueCircleImageView.image = UIImage(named: "BlueCircleImage")!
     }
@@ -62,8 +66,14 @@ private extension WeatherViewController {
     func setUpLabels() {
         titleLabel.text = weatherViewModel.title
     }
+
+    func setUpButtons() {
+        redCircleButton.setBackgroundImage(UIImage(named: "RedCircleImage")!, for: .normal)
+        redCircleButton.setTitle(weatherViewModel.redCircleButtonTitle, for: .normal)
+    }
 }
 
+// MARK: - WeatherViewModelDelegate
 extension WeatherViewController: WeatherViewModelDelegate {
 
     func viewModel(_ viewModel: WeatherViewModel, stateDidChange state: ViewModelState<WeatherViewReadyState>) {
@@ -137,5 +147,13 @@ private extension WeatherViewController {
         } else {
             messageLabel.text = errorMessage
         }
+    }
+}
+
+//MARK: - IBActions
+extension WeatherViewController {
+
+    @IBAction func redCircleButtonTapped(_ sender: Any) {
+        delegate?.navigateToSecondaryView(viewController: self)
     }
 }

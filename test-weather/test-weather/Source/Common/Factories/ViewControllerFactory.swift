@@ -16,4 +16,10 @@ final class ViewControllerFactory: ViewControllerFactoryType {
         weatherVC.appContext = appContext
         return weatherVC
     }
+
+    func makeSecondaryView(delegate: SecondaryViewControllerDelegate) -> SecondaryViewController {
+        let secondaryVC = SecondaryViewController()
+        secondaryVC.delegate = delegate
+        return secondaryVC
+    }
 }

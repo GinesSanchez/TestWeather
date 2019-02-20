@@ -11,4 +11,5 @@ import Foundation
 protocol ViewControllerFactoryType {
 
     func makeWeatherView(delegate: WeatherViewControllerDelegate, appContext: AppContextType) -> WeatherViewController
+    func makeSecondaryView(delegate: SecondaryViewControllerDelegate) -> SecondaryViewController
 }

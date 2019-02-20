@@ -25,6 +25,8 @@
 		2223A57D221DBAF800D06164 /* AppCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2223A57C221DBAF800D06164 /* AppCoordinatorTest.swift */; };
 		2223A57F221DBCC000D06164 /* WeatherViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2223A57E221DBCC000D06164 /* WeatherViewModelTest.swift */; };
 		2223A582221DBE1A00D06164 /* FakeViewModelDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2223A580221DBDDC00D06164 /* FakeViewModelDelegates.swift */; };
+		2223A586221DC42F00D06164 /* SecondaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2223A584221DC42F00D06164 /* SecondaryViewController.swift */; };
+		2223A587221DC42F00D06164 /* SecondaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2223A585221DC42F00D06164 /* SecondaryViewController.xib */; };
 		222FA430221C83120078B0FD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222FA42F221C83120078B0FD /* Constants.swift */; };
 		222FA433221C85ED0078B0FD /* WeatherAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222FA432221C85ED0078B0FD /* WeatherAppManager.swift */; };
 		222FA435221C860E0078B0FD /* WeatherAppManagerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222FA434221C860E0078B0FD /* WeatherAppManagerType.swift */; };
@@ -70,6 +72,8 @@
 		2223A57C221DBAF800D06164 /* AppCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTest.swift; sourceTree = "<group>"; };
 		2223A57E221DBCC000D06164 /* WeatherViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModelTest.swift; sourceTree = "<group>"; };
 		2223A580221DBDDC00D06164 /* FakeViewModelDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeViewModelDelegates.swift; sourceTree = "<group>"; };
+		2223A584221DC42F00D06164 /* SecondaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryViewController.swift; sourceTree = "<group>"; };
+		2223A585221DC42F00D06164 /* SecondaryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondaryViewController.xib; sourceTree = "<group>"; };
 		222FA42F221C83120078B0FD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		222FA432221C85ED0078B0FD /* WeatherAppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppManager.swift; sourceTree = "<group>"; };
 		222FA434221C860E0078B0FD /* WeatherAppManagerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppManagerType.swift; sourceTree = "<group>"; };
@@ -197,6 +201,15 @@
 			path = TestHelpers;
 			sourceTree = "<group>";
 		};
+		2223A583221DC3F200D06164 /* SecondaryView */ = {
+			isa = PBXGroup;
+			children = (
+				2223A584221DC42F00D06164 /* SecondaryViewController.swift */,
+				2223A585221DC42F00D06164 /* SecondaryViewController.xib */,
+			);
+			path = SecondaryView;
+			sourceTree = "<group>";
+		};
 		222FA431221C85CC0078B0FD /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				221CC770221BFB2D008B5986 /* WeatherView */,
+				2223A583221DC3F200D06164 /* SecondaryView */,
 				22A201D4221B2B370089FDEF /* Common */,
 			);
 			path = Source;
@@ -342,6 +356,7 @@
 				221D8E4B221B281E00D2BDEE /* LaunchScreen.storyboard in Resources */,
 				221CC774221BFB51008B5986 /* WeatherViewController.xib in Resources */,
 				221D8E48221B281E00D2BDEE /* Assets.xcassets in Resources */,
+				2223A587221DC42F00D06164 /* SecondaryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +393,7 @@
 				222FA435221C860E0078B0FD /* WeatherAppManagerType.swift in Sources */,
 				22A201DA221B2C8D0089FDEF /* CoordinatorFactory.swift in Sources */,
 				221CC776221BFB66008B5986 /* WeatherViewCoordinator.swift in Sources */,
+				2223A586221DC42F00D06164 /* SecondaryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
