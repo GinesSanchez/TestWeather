@@ -24,7 +24,7 @@ final class WeatherViewModel {
 
     private weak var delegate: WeatherViewModelDelegate?
     private var appContext: AppContextType
-    private var currentTemperature: Int?
+    var currentTemperature: Int?
 
     var viewModelState: ViewModelState<WeatherViewReadyState> = .ready(.currentTemperatureReady) {
         didSet {

@@ -9,15 +9,15 @@
 import XCTest
 @testable import TestWeather
 
-class CoordinatorTestCaseBase: XCTestCase {
-
-    //TODO: Add properties
+class TestCaseBase: XCTestCase {
+    
     var fakeAppContext: FakeAppContextType!
     var fakeNavigationController: UINavigationController!
+    var fakeWeatherViewModelDelegate: FakeWeatherViewModelDelegate!
 
     override func setUp() {
-        //TODO:
         fakeNavigationController = UINavigationController()
         fakeAppContext = FakeAppContextType()
+        fakeWeatherViewModelDelegate = FakeWeatherViewModelDelegate()
     }
 }

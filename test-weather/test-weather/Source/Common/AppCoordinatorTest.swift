@@ -9,7 +9,7 @@
 import XCTest
 @testable import TestWeather
 
-class AppCoordinatorTest: CoordinatorTestCaseBase {
+class AppCoordinatorTest: TestCaseBase {
 
     var appCoordinator: AppCoordinator?
 

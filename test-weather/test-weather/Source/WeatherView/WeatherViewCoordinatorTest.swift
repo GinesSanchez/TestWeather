@@ -9,7 +9,7 @@
 import XCTest
 @testable import TestWeather
 
-class WeatherViewCoordinatorTest: CoordinatorTestCaseBase {
+class WeatherViewCoordinatorTest: TestCaseBase {
 
     var weatherViewCoordinator: WeatherViewCoordinator?
 
