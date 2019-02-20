@@ -13,7 +13,7 @@ protocol NetworkManagerType {
     /// Retrives a URL
     ///
     /// - Parameter parameters: dictionary with parameters [key: value]
-    /// - Returns: URL for weather app
+    /// - Returns: URL
     func createURLFromParameters(parameters: [String: Any]) -> URL
 
     /// Get json from URL

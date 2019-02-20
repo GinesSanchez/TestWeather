@@ -27,8 +27,6 @@ final class NetworkManager: NetworkManagerType {
         return components.url!
     }
 
-    //TODO: Update documentation    
-
     func getJson(with url: URL, completionHandler: @escaping ([String: Any]?, Error?) -> Void) {
 
         let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
