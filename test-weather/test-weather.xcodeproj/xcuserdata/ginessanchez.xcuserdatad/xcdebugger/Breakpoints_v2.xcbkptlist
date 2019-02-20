@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "test-weather/Source/Common/Managers/WeatherAppManager.swift"
-            timestampString = "572297746.1021841"
+            filePath = "test-weather/Source/WeatherView/WeatherViewModel.swift"
+            timestampString = "572342590.731079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "getTemperature(city:key:units:)"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "init(delegate:appContext:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

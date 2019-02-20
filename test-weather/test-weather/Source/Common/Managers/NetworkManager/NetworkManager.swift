@@ -1,14 +1,14 @@
 //
-//  WeatherAppManager.swift
+//  NetworkManager.swift
 //  test-weather
 //
-//  Created by Ginés Sánchez on 2019-02-19.
+//  Created by Ginés Sánchez on 2019-02-20.
 //  Copyright © 2019 Ginés Sánchez. All rights reserved.
 //
 
 import Foundation
 
-final class WeatherAppManager: WeatherAppManagerType {
+final class NetworkManager: NetworkManagerType {
 
     func createURLFromParameters(parameters: [String:Any]) -> URL {
         var components = URLComponents()
@@ -27,29 +27,23 @@ final class WeatherAppManager: WeatherAppManagerType {
         return components.url!
     }
 
-    func getTemperature(city: String, key: String, units: String) -> Int {
+    //TODO: Update documentation    
 
-        let url = createURLFromParameters(parameters: [Constants.WeatherAPIDetails.cityKey : city,
-                                                       Constants.WeatherAPIDetails.apiKey : key,
-                                                       Constants.WeatherAPIDetails.unitsKey : units])
+    func getJson(with url: URL, completionHandler: @escaping ([String: Any]?, Error?) -> Void) {
 
         let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-            guard let data = data else { return }
+            guard let data = data else {
+                completionHandler(nil, error)
+                return
+            }
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: Any]
-                let mainInfoJson = json["main"] as! [String: Any]
-                print(mainInfoJson["temp"])
+                completionHandler(json, nil)
             } catch let error as NSError {
-                print(error)
+                completionHandler(nil, error)
             }
         }
 
         task.resume()
-
-        return 0
-    }
-
-    func getCelsiusTemperature(city: String, key: String) -> Int {
-        return getTemperature(city: city, key: key, units: Constants.WeatherAPIDetails.defaultUnitsValue)
     }
 }

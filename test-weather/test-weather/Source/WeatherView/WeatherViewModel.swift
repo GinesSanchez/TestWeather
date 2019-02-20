@@ -42,7 +42,13 @@ final class WeatherViewModel {
         self.delegate = delegate
         self.appContext = appContext
 
-        appContext.weatherAppManager.getCelsiusTemperature(city: Constants.WeatherAPIDetails.defaultCityValue, key: Constants.WeatherAPIDetails.apiKeyValue)
+        appContext.weatherAppManager.getCelsiusTemperature(city: Constants.WeatherAPIDetails.defaultCityValue, key: Constants.WeatherAPIDetails.apiKeyValue) { (temperature, error) in
+            guard let temperature = temperature else {
+                print(error!)
+                return
+            }
+            print(temperature)
+        }
     }
 }
 
